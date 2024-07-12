@@ -12,7 +12,7 @@ export const ListForm = () => {
   }
 
   return (
-    <section className="todo__list text rounded border border-white p-6 h-500px overflow-auto">
+    <section className="todo__list text rounded border border-white p-[20px] h-500px overflow-auto">
       <div className="font-bold text-xl mb-2">To Do List</div>
       {todos.map((item, index) => (
         <div key={index} className="text-white flex gap-2">

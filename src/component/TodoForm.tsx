@@ -23,15 +23,17 @@ export const TodoForm = () => {
     e.preventDefault();
 
     handleAddTodo();
+
   }
   return (
     <section className="todo__form">
       <form
         onSubmit={onSubmit}
-        className="flex flex-col gap-6 rounded border border-white p-6"
+        className="flex flex-col gap-6 rounded border border-white p-[20px]"
       >
         <input
           type="text"
+          value={form.text}
           className="text-black border border-white rounded"
           onChange={(e) => onChange(e)}
         />
