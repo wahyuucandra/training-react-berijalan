@@ -17,8 +17,8 @@ export default function ListForm () {
     <section className="todo__list text rounded border border-white flex flex-col w-[500px] h-[500px] overflow-auto">
       <div className="font-bold text-xl text-center p-[20px] border border-b-2 border-white">To Do List</div>
       <div className="p-[20px]">
-      {todos.map((item, index) => (
-        <div key={index} className="text-white flex gap-2">
+      {todos.map((item, _) => (
+        <div key={item.id} className="text-white flex gap-2">
           <input type="checkbox" checked={item.checkbox} onChange={() => changeCheckbox(item.id)}/>
           <p className={item.checkbox ? "line-through" : ""}>{item.name}</p>
         </div>

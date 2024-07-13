@@ -26,7 +26,8 @@ export const TodoForm = () => {
 
   }
   return (
-    <section className="todo__form">
+    <section className="todo__form w-[500px] h-[500px]">
+      <div className="font-bold text-xl text-center p-[20px] border border-b-2 border-white">Add Todo</div>
       <form
         onSubmit={onSubmit}
         className="flex flex-col gap-6 rounded border border-white p-[20px]"
