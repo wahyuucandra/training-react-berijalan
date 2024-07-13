@@ -1,5 +1,6 @@
+
 import { setCheckBox } from "@/reducer/todoSlice";
-import { RootState } from "../app/store";
+import { RootState } from "../../app/store";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -7,8 +8,8 @@ export const ListForm = () => {
   const { todos } = useSelector((state: RootState) => state.todo);
   const dispatch = useDispatch();
 
-  function changeCheckbox(name: string) {
-    dispatch(setCheckBox(name));
+  function changeCheckbox(id: number) {
+    dispatch(setCheckBox(id));
   }
 
   return (
@@ -16,7 +17,7 @@ export const ListForm = () => {
       <div className="font-bold text-xl mb-2">To Do List</div>
       {todos.map((item, index) => (
         <div key={index} className="text-white flex gap-2">
-          <input type="checkbox" checked={item.checkbox} onChange={() => changeCheckbox(item.name)}/>
+          <input type="checkbox" checked={item.checkbox} onChange={() => changeCheckbox(item.id)}/>
           <p className={item.checkbox ? "line-through" : ""}>{item.name}</p>
         </div>
       ))}

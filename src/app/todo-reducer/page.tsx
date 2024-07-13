@@ -1,7 +1,7 @@
 "use client";
 
-import { ListForm } from "@/component/ListForm";
-import { TodoForm } from "@/component/TodoForm";
+import { ListForm } from "@/component/Redux/ListForm";
+import { TodoForm } from "@/component/Redux/TodoForm";
 
 export default function Todo() {
   return (

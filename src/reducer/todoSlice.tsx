@@ -2,18 +2,14 @@ import { ITodo } from '@/interface/todo'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export interface TodoState {
     todos: ITodo[]
-    form: Form
-}
-
-interface Form {
-    text: string,
-    checkbox: boolean
+    form: ITodo
 }
 
 const initialState: TodoState = {
     todos : [],
     form : {
-        text: "",
+        id:0,
+        name: "",
         checkbox: false
     }
 }
@@ -27,12 +23,12 @@ export const todoSlice = createSlice({
         },
 
         setText: (state, action: PayloadAction<string>) => {
-            state.form = {... state.form, text: action.payload}
+            state.form = {... state.form, name: action.payload}
         },
 
-        setCheckBox: (state, action: PayloadAction<string>) => {
+        setCheckBox: (state, action: PayloadAction<number>) => {
             const temp = state.todos.map(item => {
-                if(item.name == action.payload){
+                if(item.id == action.payload){
                   item.checkbox = !item.checkbox
                 }
                 return item

@@ -1,6 +1,6 @@
-import { RootState } from "../app/store";
+import { RootState } from "../../app/store";
 import { ITodo } from "@/interface/todo";
-import { setText, addTodo } from "@/reducer/todoSlice";
+import { addTodo, setText } from "@/reducer/todoSlice";
 import React, { FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -13,8 +13,8 @@ export const TodoForm = () => {
   }
 
   function handleAddTodo() {
-    if (form.text) {
-      const newTodo: ITodo = { name: form.text, checkbox: false };
+    if (form.name) {
+      const newTodo: ITodo = { id:Math.random(), name: form.name, checkbox: false };
       dispatch(addTodo(newTodo));
     }
   }
@@ -33,7 +33,7 @@ export const TodoForm = () => {
       >
         <input
           type="text"
-          value={form.text}
+          value={form.name}
           className="text-black border border-white rounded"
           onChange={(e) => onChange(e)}
         />
